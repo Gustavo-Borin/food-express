@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodExpress</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+<div class="logo">
+<img src="img/icone.png">
+<h1>FoodExpress</h1>
+</div>
+
+
+<nav id="menu">
+<a href="index.html">Home</a>
+<a href="cardapio.html">Cardápio</a>
+<a href="promocoes.html">Promoções</a>
+<a href="#" onclick="abrirCarrinho()">Carrinho</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h2>O Melhor Delivery da Cidade</h2>
+<p id="status-loja"></p>
+<a href="cardapio.html">
+<button id="btn-pedir" class="btn-principal">Peça Agora</button>
+</a>
+</div>
+</section>
+
+<div id="modal-carrinho" class="modal">
+<div class="modal-content">
+<h2>Finalizar Pedido</h2>
+
+<div id="itens-carrinho"></div>
+<p id="total"></p>
+
+<input type="text" placeholder="Seu nome" id="nome">
+<input type="text" placeholder="Endereço de entrega" id="endereco">
+
+<select id="pagamento">
+<option value="">Forma de pagamento</option>
+<option>PIX</option>
+<option>Cartão de Crédito</option>
+<option>Cartão de Débito</option>
+<option>Boleto</option>
+</select>
+
+<button class="btn-finalizar" onclick="finalizarPedido()">Confirmar Pedido</button>
+<button class="btn-cancelar" onclick="cancelarPedido()">Cancelar Pedido</button>
+
+</div>
+</div>
+
+<div class="floating-cart" onclick="abrirPreviewCarrinho()">
+🛒 <span id="contador-carrinho">0</span>
+</div>
+
+<div id="preview-carrinho" class="preview-carrinho">
+<div class="preview-header">
+<h3>Seu Pedido</h3>
+<span class="fechar-preview" onclick="fecharPreview()">✕</span>
+</div>
+<div id="preview-itens"></div>
+<p id="preview-total"></p>
+<button class="btn-ir-carrinho" onclick="abrirCarrinho()">Ir para o carrinho</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

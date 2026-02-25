@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promoções</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<div class="logo">
+<img src="img/icone.png">
+<h1>FoodExpress</h1>
+</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="cardapio.html">Cardápio</a>
+<a href="#" onclick="abrirCarrinho()">Carrinho</a>
+</nav>
+</header>
+
+<section class="cardapio">
+
+<div class="card promo">
+<img src="img/pizza.jpg">
+<h3>Pizza Especial</h3>
+<p class="preco-antigo">R$ 59.90</p>
+<p class="preco-novo">R$ 49.90</p>
+<button onclick="adicionarAoCarrinho('Pizza Promo',49.90,'img/pizza.jpg', this)">Adicionar</button>
+</div>
+
+<div class="card promo">
+<img src="img/hamburguer.png">
+<h3>Hambúrguer Artesanal</h3>
+<p class="preco-antigo">R$ 39.90</p>
+<p class="preco-novo">R$ 29.90</p>
+<button onclick="adicionarAoCarrinho('Hambúrguer Promo',29.90,'img/hamburguer.png', this)">Adicionar</button>
+</div>
+
+</section>
+
+<div id="modal-carrinho" class="modal">
+<div class="modal-content">
+<h2>Finalizar Pedido</h2>
+
+<div id="itens-carrinho"></div>
+<p id="total"></p>
+
+<input type="text" placeholder="Seu nome" id="nome">
+<input type="text" placeholder="Endereço de entrega" id="endereco">
+
+<select id="pagamento">
+<option value="">Forma de pagamento</option>
+<option>PIX</option>
+<option>Cartão de Crédito</option>
+<option>Cartão de Débito</option>
+<option>Boleto</option>
+</select>
+
+<button class="btn-finalizar" onclick="finalizarPedido()">Confirmar Pedido</button>
+<button class="btn-cancelar" onclick="cancelarPedido()">Cancelar Pedido</button>
+
+</div>
+</div>
+
+<div class="floating-cart" onclick="abrirPreviewCarrinho()">
+🛒 <span id="contador-carrinho">0</span>
+</div>
+
+<div id="preview-carrinho" class="preview-carrinho">
+<div class="preview-header">
+<h3>Seu Pedido</h3>
+<span class="fechar-preview" onclick="fecharPreview()">✕</span>
+</div>
+<div id="preview-itens"></div>
+<p id="preview-total"></p>
+<button class="btn-ir-carrinho" onclick="abrirCarrinho()">Ir para o carrinho</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
